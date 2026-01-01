@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const GrandHotel());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class GrandHotel extends StatelessWidget {
+  const GrandHotel({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Grand Hotel',
       theme: ThemeData(
         // This is the theme of your application.
         //
