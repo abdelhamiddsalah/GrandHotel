@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:grandhotel/core/widgets/modern_icon_hotel.dart';
+
 class ModernSplashScreen extends StatefulWidget {
   const ModernSplashScreen({Key? key}) : super(key: key);
 
@@ -91,7 +93,7 @@ class _ModernSplashScreenState extends State<ModernSplashScreen>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // أيقونة الفندق الحديثة
-                    _buildModernIcon(),
+                    ModernIconHotel(),
                     
                     const SizedBox(height: 40),
                     
@@ -167,29 +169,7 @@ class _ModernSplashScreenState extends State<ModernSplashScreen>
     );
   }
 
-  // بناء أيقونة الفندق الحديثة
-  Widget _buildModernIcon() {
-    return Container(
-      width: 120,
-      height: 120,
-      decoration: BoxDecoration(
-        color: const Color(0xFF2E3192),
-        borderRadius: BorderRadius.circular(30),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF2E3192).withOpacity(0.3),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: const Icon(
-        Icons.apartment,
-        size: 60,
-        color: Colors.white,
-      ),
-    );
-  }
+  
 
   // بناء شريط التحميل المتحرك (Shimmer Effect)
   Widget _buildShimmerBar() {
@@ -224,30 +204,5 @@ class _ModernSplashScreenState extends State<ModernSplashScreen>
   }
 }
 
-// ==============================================================
-// طريقة الاستخدام في main.dart:
-// ==============================================================
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Grand Hotel',
-      theme: ThemeData(
-        primaryColor: const Color(0xFF2E3192),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF2E3192),
-        ),
-      ),
-      home: const ModernSplashScreen(),
-    );
-  }
-}
 
