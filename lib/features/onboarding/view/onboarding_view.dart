@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grandhotel/features/onboarding/view/widgets/dots_indicator.dart';
+import 'package:grandhotel/features/onboarding/view/widgets/first_page_in_onboarding.dart';
+import 'package:grandhotel/features/onboarding/view/widgets/second_page_in_onboarding.dart';
+import 'package:grandhotel/features/onboarding/view/widgets/third_page_in_onboarding.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -28,70 +31,13 @@ class _OnboardingViewState extends State<OnboardingView> {
               },
               children: [
                 /// Page 1
-                Container(
-                  color: Colors.redAccent,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.hotel, size: 100, color: Colors.white),
-                      SizedBox(height: 20),
-                      Text(
-                        "Welcome",
-                        style: TextStyle(fontSize: 32, color: Colors.white),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "Discover amazing hotels near you",
-                        style: TextStyle(fontSize: 18, color: Colors.white70),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
+                FirstPageInOnboarding(),
 
                 /// Page 2
-                Container(
-                  color: Colors.greenAccent,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.shopping_cart, size: 100, color: Colors.white),
-                      SizedBox(height: 20),
-                      Text(
-                        "Easy Booking",
-                        style: TextStyle(fontSize: 32, color: Colors.white),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "Book rooms with a few taps",
-                        style: TextStyle(fontSize: 18, color: Colors.white70),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
+               SecondPageInOnboarding(),
 
                 /// Page 3
-                Container(
-                  color: Colors.blueAccent,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.delivery_dining, size: 100, color: Colors.white),
-                      SizedBox(height: 20),
-                      Text(
-                        "Fast Service",
-                        style: TextStyle(fontSize: 32, color: Colors.white),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "Enjoy seamless hotel services",
-                        style: TextStyle(fontSize: 18, color: Colors.white70),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
+                ThirdPageInOnboarding(),
               ],
             ),
           ),
