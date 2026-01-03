@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grandhotel/core/styles/colors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -7,7 +8,7 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     required this.color,
     required this.width,
-    required this.height,
+    required this.height, this.decoration,
   });
 
   final String label;
@@ -15,18 +16,27 @@ class CustomButton extends StatelessWidget {
   final Color color;
   final double width;
   final double height;
-
+  final Decoration? decoration;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
       height: height,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color,
+      child: Container(
+        decoration: decoration ??   BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colorss.primary, Colorss.accent],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          border:  Border.all(color: Colorss.primary),
         ),
-        child: Text(label),
+       
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(backgroundColor: color),
+          child: Text(label),
+        ),
       ),
     );
   }
