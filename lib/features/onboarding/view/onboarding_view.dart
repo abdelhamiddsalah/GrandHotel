@@ -33,7 +33,10 @@ class _OnboardingViewState extends State<OnboardingView> {
                 /// Page 1
                 FirstPageInOnboarding(),
                 /// Page 2
+
+                /// Page 2
                SecondPageInOnboarding(),
+
                 /// Page 3
                 ThirdPageInOnboarding(),
               ],
