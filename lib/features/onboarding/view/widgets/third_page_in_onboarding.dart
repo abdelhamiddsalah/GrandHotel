@@ -7,15 +7,22 @@ class ThirdPageInOnboarding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            color: Colors.white24,
-            borderRadius: BorderRadius.circular(50),
-          ),
-          child: Icon(Icons.join_right_sharp, size: 100, color: Colors.white))
+        Column(
+          children: [
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.white24,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: Icon(Icons.join_right_sharp, size: 100, color: Colors.white))
+          ],
+        ),
       ],
+      
     );
+    
+    
   }
 }

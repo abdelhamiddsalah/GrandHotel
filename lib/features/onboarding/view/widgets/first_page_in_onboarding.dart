@@ -22,7 +22,9 @@ class FirstPageInOnboarding extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const Spacer(),
-        CustomButton(label: "Next", onPressed: (){}, color: Colors.white, width: 200, height: 50)
+        CustomButton(label: "Next", onPressed: (){}, color: Colors.white, width: 200, height: 50),
+        const SizedBox(height: 60),
+        CustomButton(label: "Skip", onPressed: (){}, color: Colors.white, width: double.infinity, height: 50)
       ],
     );
   }

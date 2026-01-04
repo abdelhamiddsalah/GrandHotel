@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grandhotel/core/widgets/custom_button.dart';
 
 class SecondPageInOnboarding extends StatelessWidget {
   const SecondPageInOnboarding({super.key});
@@ -68,7 +69,15 @@ class SecondPageInOnboarding extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
+      SizedBox(height: 60),
+      Row(
+      children: [
+          CustomButton(label: "Next", onPressed: (){}, color: Colors.white, width: 150, height: 50),
+        SizedBox(width: 20),
+        CustomButton(label: "Back", onPressed: (){}, color: Colors.white, width: 150, height: 50),
+      ],
+      )
     ]
         );
     
