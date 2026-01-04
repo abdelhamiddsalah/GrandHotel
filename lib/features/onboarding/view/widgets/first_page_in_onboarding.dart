@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grandhotel/core/widgets/custom_button.dart';
+import 'package:grandhotel/core/styles/colors.dart';
 import 'package:grandhotel/core/widgets/modern_icon_hotel.dart';
 
 class FirstPageInOnboarding extends StatelessWidget {
@@ -8,23 +8,29 @@ class FirstPageInOnboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-       ModernIconHotel(),
+       Row(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: [
+           ModernIconHotel(),
+         ],
+       ),
         const SizedBox(height: 40),
         const Text(
-          "Welcome to \n GrandHotel",
-          style: TextStyle(fontSize: 32, color: Colors.white),
+          "Welcome to \n Grand Hotel",
+          style: TextStyle(fontSize: 32, color: Colorss.primary, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 10),
         const Text(
           "Discover amazing hotels near you",
-          style: TextStyle(fontSize: 18, color: Colors.white70),
+          style: TextStyle(fontSize: 18, color: Color.fromARGB(179, 160, 158, 158)),
           textAlign: TextAlign.center,
         ),
-        const Spacer(),
-        CustomButton(label: "Next", onPressed: (){}, color: Colors.white, width: 200, height: 50),
-        const SizedBox(height: 60),
-        CustomButton(label: "Skip", onPressed: (){}, color: Colors.white, width: double.infinity, height: 50)
+
+
+
+
       ],
     );
   }

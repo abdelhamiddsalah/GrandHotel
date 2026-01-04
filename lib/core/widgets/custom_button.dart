@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grandhotel/core/styles/colors.dart';
 
 
 class CustomButton extends StatelessWidget {
@@ -7,39 +6,54 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.label,
     required this.onPressed,
-    required this.color,
     required this.width,
-    required this.height, this.decoration,
+    required this.height,
+    this.gradient,
+    this.textColor = Colors.white,
   });
 
   final String label;
   final VoidCallback onPressed;
-  final Color color;
   final double width;
   final double height;
-  final Decoration? decoration;
-
+  final Gradient? gradient;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
       height: height,
- 
-      child: Container(
-        decoration: decoration ??   BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colorss.primary, Colorss.accent],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(30),
+        onTap: onPressed,
+        child: Container(
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            gradient: gradient ??
+                const LinearGradient(
+                  colors: [
+                    Color(0xFF2E3192),
+                    Color(0xFF00BCD4),
+                  ],
+                ),
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.15),
+                blurRadius: 15,
+                offset: const Offset(0, 6),
+              ),
+            ],
           ),
-          border:  Border.all(color: Colorss.primary),
-        ),
-       
-        child: ElevatedButton(
-          onPressed: onPressed,
-          style: ElevatedButton.styleFrom(backgroundColor: color),
-          child: Text(label),
+          child: Text(
+            label,
+            style: TextStyle(
+              color: textColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
         ),
       ),
     );

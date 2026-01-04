@@ -12,12 +12,13 @@ class MyDotsIndicatorWidget extends StatelessWidget {
       dotsCount: 3,
       position: currentIndex.toDouble(),
       decorator: DotsDecorator(
-        color: Colors.grey,
-        activeColor: Colors.blue,
+        spacing: const EdgeInsets.symmetric(horizontal: 4),
+        color: Colors.grey.shade300,
+        activeColor: const Color(0xFF2E3192),
         size: const Size.square(8),
-        activeSize: const Size(18, 8),
+        activeSize: const Size(22, 8),
         activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(8),
         ),
       ),
     );

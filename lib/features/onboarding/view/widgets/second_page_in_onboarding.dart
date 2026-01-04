@@ -1,87 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:grandhotel/core/widgets/custom_button.dart';
+import 'package:grandhotel/features/onboarding/view/widgets/feature_card.dart';
 
 class SecondPageInOnboarding extends StatelessWidget {
   const SecondPageInOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      SizedBox(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(Icons.shopping_cart, size: 100, color: Colors.white),
-            SizedBox(height: 20),
-            Text(
-              "Easy Booking",
-              style: TextStyle(fontSize: 32, color: Colors.white),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "Book rooms with a few taps",
-              style: TextStyle(fontSize: 18, color: Colors.white70),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-      SizedBox(height: 20),
-      SizedBox(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(Icons.local_offer, size: 100, color: Colors.white),
-            SizedBox(height: 20),
-            Text(
-              "Best Deals",
-              style: TextStyle(fontSize: 32, color: Colors.white),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "Find exclusive offers and discounts",
-              style: TextStyle(fontSize: 18, color: Colors.white70),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      
-        ),
-        SizedBox(height: 40),
-        SizedBox(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(Icons.support_agent, size: 100, color: Colors.white),
-              SizedBox(height: 20),
-              Text(
-                "24/7 Support",
-                style: TextStyle(fontSize: 32, color: Colors.white),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "We're here to help anytime",
-                style: TextStyle(fontSize: 18, color: Colors.white70),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-      SizedBox(height: 60),
-      Row(
+    return Column(
       children: [
-          CustomButton(label: "Next", onPressed: (){}, color: Colors.white, width: 150, height: 50),
-        SizedBox(width: 20),
-        CustomButton(label: "Back", onPressed: (){}, color: Colors.white, width: 150, height: 50),
+        const SizedBox(height: 20),
+
+        /// Cards Row
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            FeatureCard(
+              icon: Icons.lock_outline,
+              title: "Safe Booking",
+              description: "Secure and fast reservations",
+            ),
+            FeatureCard(
+              icon: Icons.support_agent,
+              title: "24/7 Service",
+              description: "Support available all day",
+              isMain: true,
+            ),
+            FeatureCard(
+              icon: Icons.check_circle_outline,
+              title: "Easy Access",
+              description: "Simple and smooth experience",
+            ),
+          ],
+        ),
+
+        const Spacer(),
+
+        /// Title
+        const Text(
+          "Exceptional Features",
+          style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.w800,
+            color: Color(0xFF2E3192),
+          ),
+          textAlign: TextAlign.center,
+        ),
+
+        const SizedBox(height: 12),
+
+        /// Subtitle
+        Text(
+          "Enjoy a wide range of features\nthat make your stay unforgettable",
+          style: TextStyle(
+            fontSize: 16,
+            color: Colors.grey.shade600,
+            height: 1.5,
+          ),
+          textAlign: TextAlign.center,
+        ),
+
+        const SizedBox(height: 40),
       ],
-      )
-    ]
-        );
-    
+    );
   }
 }
-
-

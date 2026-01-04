@@ -20,54 +20,52 @@ class _ModernSplashScreenState extends State<ModernSplashScreen>
   late Animation<double> _fadeAnimation;
 
   @override
-  void initState() {
-    super.initState();
-    
-    // Animation controller للانزلاق
-    _slideController = AnimationController(
-      duration: const Duration(milliseconds: 1200),
-      vsync: this,
-    );
+void initState() {
+  super.initState();
 
-    // Animation controller للشيمر (التأثير المتحرك)
-    _shimmerController = AnimationController(
-      duration: const Duration(milliseconds: 1500),
-      vsync: this,
-    )..repeat();
+  _slideController = AnimationController(
+    duration: const Duration(milliseconds: 1200),
+    vsync: this,
+  );
 
-    // تأثير الانزلاق من الأعلى
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, -1),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _slideController,
-      curve: Curves.easeOutCubic,
-    ));
+  _shimmerController = AnimationController(
+    duration: const Duration(milliseconds: 1500),
+    vsync: this,
+  )..repeat();
 
-    // تأثير الظهور التدريجي
-    _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _slideController,
-      curve: Curves.easeIn,
-    ));
+  _slideAnimation = Tween<Offset>(
+    begin: const Offset(0, -1),
+    end: Offset.zero,
+  ).animate(CurvedAnimation(
+    parent: _slideController,
+    curve: Curves.easeOutCubic,
+  ));
 
-    // بدء الأنيميشن
-    _slideController.forward();
+  _fadeAnimation = Tween<double>(
+    begin: 0.0,
+    end: 1.0,
+  ).animate(CurvedAnimation(
+    parent: _slideController,
+    curve: Curves.easeIn,
+  ));
 
-    // الانتقال للصفحة الرئيسية بعد 3 ثواني
+  _slideController.forward();
+
+  /// ✅ الحل هنا
+  WidgetsBinding.instance.addPostFrameCallback((_) {
     Timer(const Duration(seconds: 3), () {
-     
-       Navigator.pushReplacement(
-         context,
-         MaterialPageRoute(builder: (context) => OnboardingView()),
-       );
-      
-      // للتجربة فقط - اطبع رسالة
-      print('Navigate to Home Page');
+      if (!mounted) return;
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const OnboardingView(),
+        ),
+      );
     });
-  }
+  });
+}
+
 
   @override
   void dispose() {
