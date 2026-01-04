@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grandhotel/core/styles/colors.dart';
 
+
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
@@ -17,11 +18,14 @@ class CustomButton extends StatelessWidget {
   final double width;
   final double height;
   final Decoration? decoration;
+
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
       height: height,
+ 
       child: Container(
         decoration: decoration ??   BoxDecoration(
           gradient: LinearGradient(

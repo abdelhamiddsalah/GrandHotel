@@ -3,6 +3,8 @@ import 'dart:async';
 
 import 'package:grandhotel/core/widgets/modern_icon_hotel.dart';
 
+import 'package:grandhotel/features/onboarding/view/onboarding_view.dart';
+
 class ModernSplashScreen extends StatefulWidget {
   const ModernSplashScreen({Key? key}) : super(key: key);
 
@@ -56,11 +58,11 @@ class _ModernSplashScreenState extends State<ModernSplashScreen>
 
     // الانتقال للصفحة الرئيسية بعد 3 ثواني
     Timer(const Duration(seconds: 3), () {
-      // استبدل HomePage() باسم صفحتك الرئيسية
-      // Navigator.pushReplacement(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => HomePage()),
-      // );
+     
+       Navigator.pushReplacement(
+         context,
+         MaterialPageRoute(builder: (context) => OnboardingView()),
+       );
       
       // للتجربة فقط - اطبع رسالة
       print('Navigate to Home Page');

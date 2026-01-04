@@ -39,6 +39,8 @@ class _OnboardingViewState extends State<OnboardingView> {
 
                 /// Page 3
                 ThirdPageInOnboarding(),
+
+               
               ],
             ),
           ),
